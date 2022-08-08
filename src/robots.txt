@@ -1,0 +1,4 @@
+User-agent: *
+
+
+Sitemap: https:[this site's eventual URL]/sitemap.xml
