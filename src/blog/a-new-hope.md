@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: post
 title: A New Hope
 tags: blog
 ---

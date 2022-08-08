@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: post
 title: Welcome to my blog
 tags: blog
 ---

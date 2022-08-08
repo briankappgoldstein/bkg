@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ site.lang }}">
+<!--!
+  Want to see the full source code?
+  Check out the repository: {{ site.repo }}
+-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+
+        {% include "meta.njk" %}
+        <script>{% include "initialtheme.njk" %}</script>
+    </head>
+    <body>
+
+          <div class="hfeed layout" role="document">
+            {% include "header.njk" %}
+
+            <main class="main container" role="main" id="main" tabindex="-1">
+                {{ content | safe }}
+            </main>
+
+            {% include "footer.njk" %}
+        </div>
+
+        {# Main JS Bundle #}
+        <script src="{{ '/assets/scripts/main.js' | url }}" defer></script>
+        {%- if layout == 'post' or layout == 'note' -%}
+            <script src="{{ '/assets/scripts/webmentions.js' | url }}" defer></script>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        {%- endif -%}
+    </body>
+</html>
